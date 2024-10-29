@@ -237,6 +237,9 @@ def main(page: ft.Page):
                                     ft.ElevatedButton(
                                         'la informatica durante la pandemia de covid-19',
                                         on_click=lambda _: [StopAll(), page.go('/pandemia')]),
+                                    ft.ElevatedButton(
+                                        'las nuevas tecnologias',
+                                        on_click=lambda _: [StopAll(), page.go('/nuevas')]),
                                     ft.Image(
                                         src="Portada.png",
                                         width=image_width_Portada,
@@ -350,6 +353,7 @@ def main(page: ft.Page):
                     ]
                 )
             )
+        # Vista de las redes sociales
         elif page.route == '/redes':
             page.views.append(
                 View(
@@ -381,6 +385,7 @@ def main(page: ft.Page):
                     ]
                 )
             )
+        #viata de la informatica durante la pandemia
         elif page.route == '/pandemia':
             page.views.append(
                 View(
@@ -412,7 +417,38 @@ def main(page: ft.Page):
                     ]
                 )
             )
-        
+        #viata de la las nuevas tecnologias
+        elif page.route == '/nuevas':
+            page.views.append(
+                View(
+                    "/nuevas",
+                    controls=[
+                        AppBar(
+                            title=ft.Text("las nuevas tecnologias"),
+                            bgcolor="gray"
+                        ),
+                        ft.Container(
+                            ft.Column(
+                                controls=[
+                                    ElevatedButton(
+                                        'Volver al inicio',
+                                        on_click=lambda _: page.go('/')
+                                    ),
+                                    ElevatedButton(
+                                        'Los padres de la informática',
+                                        on_click=lambda _: page.go('/padres')
+                                    ),
+                                    ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
+                                    # Aquí puedes agregar el contenido específico para la sección de lenguajes de programación
+                                ],
+                                alignment=ft.MainAxisAlignment.START
+                            ),
+                            bgcolor=page.bgcolor,
+                            expand=True
+                        )
+                    ]
+                )
+            )
         page.update()
     
     page.on_route_change = route_change
