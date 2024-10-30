@@ -77,6 +77,19 @@ def main(page: ft.Page):
     
     Brin = ft.Audio(src="Brin.mp3", volume=1, balance=0)
     page.overlay.append(Brin)
+
+    #audios de lenguajes
+    fortran = ft.Audio(src="fortran.mp3", volume=1, balance=0)
+    page.overlay.append(fortran)
+    
+    cobol = ft.Audio(src="cobol.mp3",volume=1,balance=0)
+    page.overlay.append(cobol)
+    
+    pascal = ft.Audio(src="pascal_lenguaje.mp3", volume=1,balance=0)
+    page.overlay.append(pascal)
+    
+    c = ft.Audio(src="c.mp3",volume=1, balance=0)
+    page.overlay.append(c)
     
     def StopAll():
         intro.pause()
@@ -100,6 +113,10 @@ def main(page: ft.Page):
         Zuckerberg.pause()
         Pages.pause()
         Brin.pause()
+        fortran.pause()
+        cobol.pause()
+        pascal.pause()
+        c.pause()
     
     def play_intro(e):
         StopAll()
@@ -184,6 +201,22 @@ def main(page: ft.Page):
     def play_brin(e):
         StopAll()
         Brin.play()
+    
+    def play_fortran(e):
+        StopAll()
+        fortran.play()
+    
+    def play_cobol(e):
+        StopAll()
+        cobol.play()
+        
+    def play_pascal2(e):
+        StopAll()
+        pascal.play()
+    
+    def play_c(e):
+        StopAll()
+        c.play()
         
     
     # Botones Padres de la informática con imágenes y etiquetas semánticas
@@ -208,11 +241,15 @@ def main(page: ft.Page):
     btn19 = ElevatedButton(content=ft.Image(src="Pages.jpg", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Larry Page"), on_click=play_pages)
     btn20 = ElevatedButton(content=ft.Image(src="Brin.webp", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Sergey Brin"), on_click=play_brin)
     
-    # Botones Tipos de lenguaje 
-    btn21 = ElevatedButton(content=ft.Image(src="fortran.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="Fortran"))
-    btn22 = ElevatedButton(content=ft.Image(src="cobol.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="cobol"))
-    btn23 = ElevatedButton(content=ft.Image(src="pascal.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
-    btn24 = ElevatedButton(content=ft.Image(src="c.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="C#"))
+    # Botones Tipos de lenguaje btn = ElevatedButton(content=ft.Image(src="",width=img_width,height=img_height, border_radius=border_radius, semantics_label="""))
+    btn21 = ElevatedButton(content=ft.Image(src="fortran.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="Fortran"), on_click=play_fortran)
+    btn22 = ElevatedButton(content=ft.Image(src="cobol.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="cobol"), on_click=play_cobol)
+    btn23 = ElevatedButton(content=ft.Image(src="pascal.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"), on_click=play_pascal2)
+    btn24 = ElevatedButton(content=ft.Image(src="c.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="C"),on_click=play_c)
+    btn25 = ElevatedButton(content=ft.Image(src="html.png",width=img_width,height=img_height,border_radius=border_radius,semantics_label="html"))
+    btn26 = ElevatedButton(content=ft.Image(src="python.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="python"))
+    btn27 = ElevatedButton(content=ft.Image(src="sql.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="sql"))
+    btn28 = ElevatedButton(content=ft.Image(src="php.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="php"))
     
     # Manejo del cambio de ruta
     def route_change(route):
@@ -353,6 +390,10 @@ def main(page: ft.Page):
                                     ft.Row(
                                         alignment="center",
                                         controls=[btn21,btn22,btn23,btn24]
+                                    ),
+                                    ft.Row(
+                                        alignment="center",
+                                        controls=[btn25,btn26,btn27,btn28]
                                     )
                                 ],
                                 alignment=ft.MainAxisAlignment.START
