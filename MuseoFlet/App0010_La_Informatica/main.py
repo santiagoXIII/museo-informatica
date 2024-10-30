@@ -207,6 +207,13 @@ def main(page: ft.Page):
     btn18 = ElevatedButton(content=ft.Image(src="Zuckerberg.webp", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Mark Zuckerberg"), on_click=play_zuckerberg)
     btn19 = ElevatedButton(content=ft.Image(src="Pages.jpg", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Larry Page"), on_click=play_pages)
     btn20 = ElevatedButton(content=ft.Image(src="Brin.webp", width=img_width, height=img_height, border_radius=border_radius, semantics_label="Sergey Brin"), on_click=play_brin)
+    
+    # Botones Tipos de lenguaje 
+    btn21 = ElevatedButton(content=ft.Image(src="fortran.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="Fortran"))
+    btn22 = ElevatedButton(content=ft.Image(src="cobol.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="cobol"))
+    btn23 = ElevatedButton(content=ft.Image(src="pascal.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="pascal"))
+    btn24 = ElevatedButton(content=ft.Image(src="c.png",width=img_width,height=img_height, border_radius=border_radius, semantics_label="C#"))
+    
     # Manejo del cambio de ruta
     def route_change(route):
         # Limpia las vistas anteriores
@@ -343,7 +350,10 @@ def main(page: ft.Page):
                                         on_click=lambda _: page.go('/padres')
                                     ),
                                     ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
-                                    # Aquí puedes agregar el contenido específico para la sección de lenguajes de programación
+                                    ft.Row(
+                                        alignment="center",
+                                        controls=[btn21,btn22,btn23,btn24]
+                                    )
                                 ],
                                 alignment=ft.MainAxisAlignment.START
                             ),
@@ -375,7 +385,10 @@ def main(page: ft.Page):
                                         on_click=lambda _: page.go('/padres')
                                     ),
                                     ft.Text("Los lenguajes de programación han evolucionado a lo largo de la historia, aquí te presentamos algunos de los más importantes:"),
-                                    # Aquí puedes agregar el contenido específico para la sección de lenguajes de programación
+                                    ft.Row(
+                                        alignment="center",
+                                        controls=[btn21]
+                                    )
                                 ],
                                 alignment=ft.MainAxisAlignment.START
                             ),
